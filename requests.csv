@@ -1,0 +1,6 @@
+Gender,Married,Dependents,Education,Self_Employed,ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,Property_Area,Prediction
+Male,Yes,0,Graduate,No,234,333,6000,200,1.0,Urban,Rejected
+Male,Yes,0,Graduate,No,6000,0,10000,300,1.0,Urban,Rejected
+Male,No,0,Graduate,No,4000,1000,100000,10000000,1.0,Rural,Rejected
+Male,Yes,2,Not Graduate,No,4000,1900,81,360,1.0,Urban,Approved
+Male,Yes,2,Not Graduate,No,4000,1900,81,360,1.0,Urban,Approved
