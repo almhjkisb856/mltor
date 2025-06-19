@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Request Form{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-2xl transform transition-all duration-300 hover:scale-[1.01] border border-gray-200 mx-auto">
+    <h2 class="text-4xl font-extrabold text-center text-emerald-800 mb-8 tracking-tight">Loan Request Form</h2>
+    <form method="POST" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label for="Gender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                <select name="Gender" id="Gender" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Married" class="block text-sm font-medium text-gray-700 mb-1">Married</label>
+                <select name="Married" id="Married" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Dependents" class="block text-sm font-medium text-gray-700 mb-1">Dependents</label>
+                <select name="Dependents" id="Dependents" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3+</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Education" class="block text-sm font-medium text-gray-700 mb-1">Education</label>
+                <select name="Education" id="Education" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>Graduate</option>
+                    <option>Not Graduate</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Self_Employed" class="block text-sm font-medium text-gray-700 mb-1">Self Employed</label>
+                <select name="Self_Employed" id="Self_Employed" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="ApplicantIncome" class="block text-sm font-medium text-gray-700 mb-1">Applicant Income</label>
+                <input type="number" name="ApplicantIncome" id="ApplicantIncome" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="CoapplicantIncome" class="block text-sm font-medium text-gray-700 mb-1">Coapplicant Income</label>
+                <input type="number" name="CoapplicantIncome" id="CoapplicantIncome" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="LoanAmount" class="block text-sm font-medium text-gray-700 mb-1">Loan Amount</label>
+                <input type="number" name="LoanAmount" id="LoanAmount" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="Loan_Amount_Term" class="block text-sm font-medium text-gray-700 mb-1">Loan Amount Term</label>
+                <input type="number" name="Loan_Amount_Term" id="Loan_Amount_Term" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            </div>
+
+            <div>
+                <label for="Credit_History" class="block text-sm font-medium text-gray-700 mb-1">Credit History</label>
+                <select name="Credit_History" id="Credit_History" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option value="1.0">Yes</option>
+                    <option value="0.0">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Property_Area" class="block text-sm font-medium text-gray-700 mb-1">Property Area</label>
+                <select name="Property_Area" id="Property_Area" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md shadow-sm">
+                    <option>Urban</option>
+                    <option>Semiurban</option>
+                    <option>Rural</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <input type="submit" value="Submit Request" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200 ease-in-out cursor-pointer">
+        </div>
+    </form>
+    <div class="mt-6 text-center">
+        <a href="{{ url_for('all_requests') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-emerald-700 bg-emerald-100 hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200">
+            View All Requests
+        </a>
+    </div>
+</div>
+{% endblock %}

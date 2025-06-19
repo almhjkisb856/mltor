@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}جميع طلبات القروض{% endblock %}
+
+{% block content %}
+<div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-6xl overflow-hidden border border-gray-200 mx-auto">
+    <h2 class="text-4xl font-extrabold text-center text-emerald-800 mb-8 tracking-tight">جميع طلبات القروض والتنبؤات</h2>
+
+    {% if tables %}
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    {% for col in tables[0].keys() %}
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        {{ col.replace('_', ' ') }} {# Replace underscores for better readability #}
+                    </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                {% for row in tables %}
+                <tr>
+                    {% for key, col_value in row.items() %}
+                    <td class="px-6 py-4 whitespace-nowrap text-sm {% if key == 'Prediction' %}{% if col_value == 'Approved' %}text-green-600 font-semibold{% else %}text-red-600 font-semibold{% endif %}{% else %}text-gray-900{% endif %}">
+                        {{ col_value }}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-gray-600 text-lg text-center">لا توجد طلبات قروض لعرضها بعد.</p>
+    {% endif %}
+
+    <div class="mt-8 text-center">
+        <a href="{{ url_for('index') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-emerald-700 bg-emerald-100 hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors duration-200">
+            العودة إلى النموذج
+        </a>
+    </div>
+</div>
+{% endblock %}
